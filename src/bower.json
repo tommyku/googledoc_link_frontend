@@ -1,0 +1,19 @@
+{
+  "name": "googledoc_link_frontend",
+  "homepage": "https://github.com/tommyku/googledoc_link_frontend",
+  "authors": [
+    "Tommy Ku"
+  ],
+  "description": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "app-router": "^2.7.2"
+  }
+}
