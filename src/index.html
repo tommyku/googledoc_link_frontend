@@ -17,6 +17,7 @@
     <link rel="import" href="/bower_components/app-router/app-router.html">
   </head>
   <body>
+    <local-storage store='googledoc_link'></local-storage>
     <app-router>
       <!-- matches an exact path -->
       <app-route path="/home" import="/pages/welcome.html" element="page-welcome"></app-route>
@@ -26,5 +27,6 @@
 
 	<link rel='stylesheet' href='main.css' />
 	<script src='main.js' type='module' defer></script>
+	<script src='/components/functional/local-storage.js' type='text/javascript' defer></script>
 </body>
 </html>
