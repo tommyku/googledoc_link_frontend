@@ -13,7 +13,7 @@ Companion webapp for [tommyku/googledoc_link_bot](https://github.com/tommyku/goo
 - [x] Event bus element
 - [x] Retrieve Google Spreadsheet data dynamically
 - [x] Welcome page (add spreadsheet link, validate link, save to localStorage)
-- [ ] Help page (spreadsheet format)
+- [x] Help page (spreadsheet format)
 - [ ] Home page
 - [ ] Sorting
 - [ ] Link search

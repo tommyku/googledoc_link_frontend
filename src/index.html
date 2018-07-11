@@ -20,10 +20,9 @@
     <event-bus id='bus'></event-bus>
     <ajax-request defer id='spreadsheet' url=''></ajax-request>
     <local-storage store='googledoc_link'></local-storage>
-    <app-router>
-      <!-- matches an exact path -->
+    <app-router mode="hash" trailingSlash="ignore">
       <app-route path="/home" import="/pages/home.html" element="page-home"></app-route>
-      <!-- matches everything else -->
+      <app-route path="/help" import="/pages/help.html" template></app-route>
       <app-route path="*" import="/pages/welcome.html" element="page-welcome"></app-route>
     </app-router>
 
