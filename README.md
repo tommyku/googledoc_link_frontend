@@ -10,8 +10,8 @@ Companion webapp for [tommyku/googledoc_link_bot](https://github.com/tommyku/goo
 ### Tasks
 
 - [x] A working router
-- [ ] Event bus element
-- [ ] Retrieve Google Spreadsheet data dynamically
+- [x] Event bus element
+- [x] Retrieve Google Spreadsheet data dynamically
 - [ ] Welcome page
 - [ ] Index page
 - [ ] Sorting
@@ -26,3 +26,9 @@ Companion webapp for [tommyku/googledoc_link_bot](https://github.com/tommyku/goo
 1. Fill in the URL for your public Google spreadsheet in `/src/config.js`
 1. Commit it and push to master
 1. Serve your site as a GitHub page
+
+## Useful Information
+
+- [Accessing a (new-style, public) Google sheet as JSON - Stack
+  Overflow](https://stackoverflow.com/questions/30082277/accessing-a-new-style-public-google-sheet-as-json)
+- [Bal Laedi Workshop: 【教學】Google Sheet get JSON (選擇worksheet) with Javascript](https://ballaediworkshop.blogspot.com/2017/08/google-sheet-get-json-worksheet-with.html)

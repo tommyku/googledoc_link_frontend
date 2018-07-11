@@ -26,7 +26,7 @@ class LocalStorage extends HTMLElement {
   }
 
   update(e) {
-    this._store = e.detail.data;
+    this._store = Object.assign({}, this._store, e.detail.data);
     localStorage.setItem(this.storeName, JSON.stringify(this._store));
 
     this.subscriptions.forEach((callback) => callback(this._store));
