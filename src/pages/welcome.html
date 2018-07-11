@@ -1,5 +1,68 @@
 <template>
-  fuck you
+  <style>
+    .container {
+      background: #ffbebe;
+      display: grid;
+      grid-template-columns: 1fr 1fr 50vw 1fr 1fr;
+      grid-template-rows: 10vh 40vh 40vh 10vh;
+    }
+
+    .logo {
+      grid-column: 3 / span 1;
+      grid-row: 2 / span 1;
+      background-image: url('/static/icon512.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    .form {
+      grid-column: 2 / span 3;
+      grid-row: 3 / span 1;
+      text-align: center;
+    }
+
+    .form label {
+      font-weight: lighter;
+      margin: auto;
+    }
+
+    .form input {
+      width: 100%;
+      padding: 0.5rem .25rem;
+      margin: 1rem 0;
+      box-sizing: border-box;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+      }
+
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    .fadeInDown {
+      animation-name: fadeInDown;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+    }
+  </style>
+  <div class='container'>
+    <section class='logo'></section>
+    <section class='form'>
+      <p class='fadeInDown'>
+        First we need an URL to your Google Spreadsheet
+        (<a href='#/help'>What URL?</a>)
+      </p>
+      <input id='ajax-url' type='text' class='fadeInDown' placeholder='Google Spreadsheet URL' />
+      <button class='fadeInDown' id='submit' role='button'>OK</button>
+    </section>
+  </div>
 </template>
 
 <script type='text/javascript'>
