@@ -14,7 +14,7 @@ Companion webapp for [tommyku/googledoc_link_bot](https://github.com/tommyku/goo
 - [x] Retrieve Google Spreadsheet data dynamically
 - [x] Welcome page (add spreadsheet link, validate link, save to localStorage)
 - [x] Help page (spreadsheet format)
-- [ ] Home page
+- [ ] Home page (list records, load into dom progressively)
 - [ ] Sorting
 - [ ] Link search
 - [ ] Marking links, like a bookmark (locally)
