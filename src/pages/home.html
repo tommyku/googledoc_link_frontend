@@ -1,0 +1,71 @@
+<template>
+  <style>
+    .container {
+      background: #ffbebe;
+      display: grid;
+      grid-template-columns: 1rem 1fr 1rem;
+      grid-template-rows: 10vh 1fr;
+      min-height: 100vh;
+      box-sizing: border-box;
+      font-size: 0.8rem;
+    }
+
+    header {
+      grid-column: 1 / span 3;
+      grid-row: 1 / span 1;
+      background-image: url('/static/icon512.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      box-shadow: 0 4px 26px #c79494;
+    }
+
+    main {
+      grid-column: 2 / span 1;
+      grid-row: 2 / span 1;
+    }
+
+    @keyframes spinnng {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .loader {
+      display: inline-block;
+      position: fixed;
+      width: 100vw;
+      top: 50vh;
+      left: 0;
+      text-align: center;
+      animation-name: spinnng;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: both;
+    }
+
+    .loader:before {
+      content: "\21BB";
+      font-size: 15vw;
+      color: #c79494;
+    }
+  </style>
+  <div class='container'>
+    <header></header>
+    <main>
+      <section class="loader"></section>
+      <section class="error" style="display: none;">Oh! Something is wrong!</section>
+    </main>
+  </div>
+</template>
+
+<script type='text/javascript'>
+  // reference to this doc for the class to use
+  const homeDoc = document.currentScript.ownerDocument;
+</script>
+
+<script type='module' src='./home.js'></script>
