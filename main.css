@@ -1,0 +1,15 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: middle;
+  font-family: sans-serif;
+  line-height: 1.48rem;
+}
+
+* {
+  user-select: none;
+}
+

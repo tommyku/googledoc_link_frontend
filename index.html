@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta name="theme-color" content="#ffaaaa">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ffaaaa">
+    <meta name="apple-mobile-web-app-title" content="Link">
+
+    <title>Link</title>
+
+    <!--<link rel="manifest" href="manifest.json">-->
+    <link rel="icon" type="image/png" href="static/icon192.png">
+    <link rel="apple-touch-icon" href="static/icon192.png">
+
+    <link rel="import" href="/bower_components/app-router/app-router.html">
+  </head>
+  <body>
+    <event-bus id='bus'></event-bus>
+    <ajax-request defer id='spreadsheet' url=''></ajax-request>
+    <local-storage store='googledoc_link'></local-storage>
+    <app-router mode="hash" trailingSlash="ignore">
+      <app-route path="/home" import="/pages/home.html" element="page-home"></app-route>
+      <app-route path="/help" import="/pages/help.html" template></app-route>
+      <app-route path="*" import="/pages/welcome.html" element="page-welcome"></app-route>
+    </app-router>
+
+	<link rel='stylesheet' href='main.css' />
+  <script src='/node_modules/snabbdom/dist/snabbdom.min.js' type='text/javascript'></script>
+  <script src='/node_modules/snabbdom/dist/snabbdom-attributes.min.js' type='text/javascript'></script>
+
+	<script src='main.js' type='module' defer></script>
+	<script src='/components/functional/ajax-request.js' type='text/javascript' defer></script>
+	<script src='/components/functional/event-bus.js' type='text/javascript' defer></script>
+	<script src='/components/functional/local-storage.js' type='text/javascript' defer></script>
+</body>
+</html>

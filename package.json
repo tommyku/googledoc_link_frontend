@@ -1,0 +1,21 @@
+{
+  "name": "googledoc_link_frontend",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tommyku/googledoc_link_frontend.git"
+  },
+  "author": "Tommy Ku",
+  "bugs": {
+    "url": "https://github.com/tommyku/googledoc_link_frontend/issues"
+  },
+  "homepage": "https://github.com/tommyku/googledoc_link_frontend#readme",
+  "dependencies": {
+    "snabbdom": "^0.7.1"
+  }
+}
