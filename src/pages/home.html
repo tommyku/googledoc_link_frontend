@@ -3,11 +3,12 @@
     .container {
       background: #ffbebe;
       display: grid;
-      grid-template-columns: 1rem 1fr 1rem;
+      grid-template-columns: 1rem calc(100vw - 2rem) 1rem;
       grid-template-rows: 10vh 1fr;
       min-height: 100vh;
       box-sizing: border-box;
       font-size: 0.8rem;
+      overflow-x: hidden;
     }
 
     header {
@@ -59,6 +60,7 @@
     <main>
       <section class="loader"></section>
       <section class="error" style="display: none;">Oh! Something is wrong!</section>
+      <section class="list"></section>
     </main>
   </div>
 </template>
@@ -68,4 +70,5 @@
   const homeDoc = document.currentScript.ownerDocument;
 </script>
 
+<link rel='import' href='/components/views/link-item.html' />
 <script type='module' src='./home.js'></script>

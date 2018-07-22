@@ -34,6 +34,15 @@ class PageHome extends HTMLElement {
 
   updateList(json) {
     console.log(json);
+    this.data = json;
+    const $list = this.shadowRoot.querySelector('.list');
+    json.feed.entry.forEach((item) => {
+      const $linkItem = document.createElement('link-item');
+      $linkItem.setAttribute('title', item['gsx$title']['$t']);
+      $linkItem.setAttribute('url', item['gsx$link']['$t']);
+      $linkItem.setAttribute('description', item['gsx$description']['$t']);
+      $list.appendChild($linkItem);
+    });
   }
 
   updateListError(e) {
