@@ -15,7 +15,8 @@ Companion webapp for [tommyku/googledoc_link_bot](https://github.com/tommyku/goo
 - [x] Welcome page (add spreadsheet link, validate link, save to localStorage)
 - [x] Help page (spreadsheet format)
 - [x] Home page (list records)
-- [ ] Home page load links progressively
+- [x] Home page load links with infinite scroll
+- [ ] Home page displays links with DOM recycling
 - [ ] Search
 - [ ] Marking links, like a bookmark (locally)
 - [ ] Make it a PWA
