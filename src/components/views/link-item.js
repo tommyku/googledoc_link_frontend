@@ -1,5 +1,6 @@
 const patch = snabbdom.init([
   snabbdom_attributes.default,
+  snabbdom_props.default,
 ]);
 const h = snabbdom.h;
 
@@ -36,11 +37,18 @@ class LinkItem extends HTMLElement {
     this.render();
   }
 
+  getDescription() {
+    const textLength = this.info.description.length;
+    return textLength > 0 ?
+      this.info.description.slice(0, 180) + (textLength > 180 ? '...' : '')
+      : ''
+  }
+
   slots() {
     return {
-      title: h('span', { attrs: { slot: 'title' } }, this.info.title),
+      title: h('span', { attrs: { slot: 'title' }, props: { innerHTML: this.info.title } }),
       url: h('span', { attrs: { slot: 'url' } }, this.info.url),
-      description: h('span', { attrs: { slot: 'description' } }, this.info.description.slice(0, 180) + '...')
+      description: h('span', { attrs: { slot: 'description' }, props: { innerHTML: this.getDescription() } })
     };
   }
 
