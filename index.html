@@ -23,12 +23,14 @@
     <app-router mode="hash" trailingSlash="ignore">
       <app-route path="/home" import="/pages/home.html" element="page-home"></app-route>
       <app-route path="/help" import="/pages/help.html" template></app-route>
-      <app-route path="*" import="/pages/welcome.html" element="page-welcome"></app-route>
+      <app-route path="/welcome" import="/pages/welcome.html" element="page-welcome"></app-route>
+      <app-route path="*" import="/pages/home.html" element="page-home"></app-route>
     </app-router>
 
 	<link rel='stylesheet' href='main.css' />
   <script src='/node_modules/snabbdom/dist/snabbdom.min.js' type='text/javascript'></script>
   <script src='/node_modules/snabbdom/dist/snabbdom-attributes.min.js' type='text/javascript'></script>
+  <script src='/node_modules/snabbdom/dist/snabbdom-props.min.js' type='text/javascript'></script>
 
 	<script src='main.js' type='module' defer></script>
 	<script src='/components/functional/ajax-request.js' type='text/javascript' defer></script>
