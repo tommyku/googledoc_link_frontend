@@ -23,7 +23,8 @@
     <app-router mode="hash" trailingSlash="ignore">
       <app-route path="/home" import="/pages/home.html" element="page-home"></app-route>
       <app-route path="/help" import="/pages/help.html" template></app-route>
-      <app-route path="*" import="/pages/welcome.html" element="page-welcome"></app-route>
+      <app-route path="/welcome" import="/pages/welcome.html" element="page-welcome"></app-route>
+      <app-route path="*" import="/pages/home.html" element="page-home"></app-route>
     </app-router>
 
 	<link rel='stylesheet' href='main.css' />
