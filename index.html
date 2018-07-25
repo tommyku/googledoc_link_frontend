@@ -13,28 +13,36 @@
     <!--<link rel="manifest" href="manifest.json">-->
     <link rel="icon" type="image/png" href="static/icon192.png">
     <link rel="apple-touch-icon" href="static/icon192.png">
-
-    <link rel="import" href="/bower_components/app-router/app-router.html">
   </head>
   <body>
     <event-bus id='bus'></event-bus>
     <ajax-request defer id='spreadsheet' url=''></ajax-request>
     <local-storage store='googledoc_link'></local-storage>
+    <data-store></data-store>
+    <elasticlunr-index></elasticlunr-index>
     <app-router mode="hash" trailingSlash="ignore">
       <app-route path="/home" import="/pages/home.html" element="page-home"></app-route>
+      <app-route path="/search" import="/pages/search.html" element="page-search"></app-route>
       <app-route path="/help" import="/pages/help.html" template></app-route>
       <app-route path="/welcome" import="/pages/welcome.html" element="page-welcome"></app-route>
       <app-route path="*" import="/pages/home.html" element="page-home"></app-route>
     </app-router>
 
-	<link rel='stylesheet' href='main.css' />
+  <link rel="import" href="/bower_components/app-router/app-router.html">
+
   <script src='/node_modules/snabbdom/dist/snabbdom.min.js' type='text/javascript'></script>
   <script src='/node_modules/snabbdom/dist/snabbdom-attributes.min.js' type='text/javascript'></script>
   <script src='/node_modules/snabbdom/dist/snabbdom-props.min.js' type='text/javascript'></script>
 
+  <script src='/bower_components/elasticlunr.js/elasticlunr.min.js' type='text/javascript'></script>
+
 	<script src='main.js' type='module' defer></script>
+	<script src='/components/functional/data-store.js' type='text/javascript' defer></script>
+	<script src='/components/functional/elasticlunr-index.js' type='text/javascript' defer></script>
 	<script src='/components/functional/ajax-request.js' type='text/javascript' defer></script>
 	<script src='/components/functional/event-bus.js' type='text/javascript' defer></script>
 	<script src='/components/functional/local-storage.js' type='text/javascript' defer></script>
+
+	<link rel='stylesheet' href='main.css' />
 </body>
 </html>

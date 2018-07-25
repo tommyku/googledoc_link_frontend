@@ -12,8 +12,17 @@ class PageHome extends HTMLElement {
 
   connectedCallback() {
     const $localStorage = document.querySelector('local-storage');
+    const $dataStore = document.querySelector('data-store');
     const $ajaxRequest = document.querySelector('ajax-request');
     const store = $localStorage.store;
+
+    if ($dataStore.store) {
+      this.entriesCount = $dataStore.store.length;
+      this.hideLoader();
+      this.revealList();
+      this.registerInfiniteScroll();
+      return;
+    }
 
     if (store['url']) {
       $ajaxRequest.setAttribute('url', store['url']);
@@ -50,8 +59,18 @@ class PageHome extends HTMLElement {
   }
 
   updateList(json) {
-    this.data = json;
-    this.entriesCount = this.data.feed.entry.length;
+    const $dataStore = document.querySelector('data-store');
+    const $elasticlunrIndex = document.querySelector('elasticlunr-index');
+    $dataStore.replace(json.feed.entry);
+    json.feed.entry.forEach((item, index) => {
+      $elasticlunrIndex.addDoc({
+        title: item['gsx$title']['$t'],
+        description: item['gsx$description']['$t'],
+        url: item['gsx$link']['$t'],
+        id: index
+      });
+    })
+    this.entriesCount = json.feed.entry.length;
   }
 
   revealList(count) {
@@ -62,13 +81,14 @@ class PageHome extends HTMLElement {
     }
 
     const $list = this.shadowRoot.querySelector('.list');
+    const $dataStore = document.querySelector('data-store');
     const itemsToDisplay = count || 20;
     const endKey = Math.min(
       Math.max(0, this.itemsDisplayed + itemsToDisplay - 1),
       this.entriesCount - 1
     );
 
-    this.data.feed.entry
+    $dataStore.store
       .slice(this.itemsDisplayed, endKey)
       .forEach((item, index) => {
         const $linkItem = document.createElement('link-item');
