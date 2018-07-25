@@ -17,6 +17,5 @@
   },
   "_source": "https://github.com/weixsong/elasticlunr.js.git",
   "_target": "^0.9.6",
-  "_originalSource": "elasticlunr.js",
-  "_direct": true
+  "_originalSource": "elasticlunr.js"
 }

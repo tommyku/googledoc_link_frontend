@@ -50,6 +50,8 @@
     main {
       grid-column: 2 / span 1;
       grid-row: 2 / span 1;
+      animation-name: slideInLeft;
+      animation-duration: 0.35s;
     }
 
     @keyframes spinnng {
@@ -85,6 +87,17 @@
       pointer-events: none;
       display: block;
       padding-top: 10vh;
+    }
+
+    @keyframes slideInLeft {
+      from {
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+      }
+
+      to {
+        transform: translate3d(0, 0, 0);
+      }
     }
   </style>
   <div class='container'>
